@@ -6,7 +6,22 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+
+
+/**
+ * @author joselito
+ */
+
+
 public class Ej6 {
+
+/**
+ * hollllaaa
+ * 
+ * prpñpññpeegrjgbr
+ * ge4rpojgnnj
+ * e4origji4r
+ */
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

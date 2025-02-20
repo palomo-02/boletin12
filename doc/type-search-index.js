@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"booletin12","l":"EJ1"},{"p":"booletin12","l":"Ej12"},{"p":"booletin12","l":"Ej3"},{"p":"booletin12","l":"Ej4"},{"p":"booletin12","l":"Ej5"},{"p":"booletin12","l":"Ej6"},{"p":"booletin12","l":"EJ7"},{"p":"booletin12","l":"Ej8"}];updateSearchResults();
