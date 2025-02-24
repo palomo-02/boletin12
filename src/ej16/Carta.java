@@ -1,6 +1,5 @@
 package ej16;
 
-import java.util.Objects;
 
 public class Carta implements Comparable<Carta> {
 
@@ -37,22 +36,26 @@ public class Carta implements Comparable<Carta> {
 	public String toString() {
 		return "Carta [palo=" + palo + ", numCar=" + numCar + "]";
 	}
-	 @Override
-	    public boolean equals(Object obj) {
-	        if (this == obj) return true;
-	        if (obj == null || getClass() != obj.getClass()) return false;
-	        Carta carta = (Carta) obj;
-	        return Objects.equals(palo, carta.palo) && Objects.equals(numCar, carta.numCar);
-	    }
-
-	    @Override
-	    public int hashCode() {
-	        return Objects.hash(palo, numCar);
-	    }
-
-	    @Override
-	    public int compareTo(Carta otra) {
-	        return this.numCar.compareTo(otra.numCar);
+	public int compareTo(Carta c) {
+		
+		
+		if(palo.equals(c.getPalo())) {
+			
+			
+			return numCar.compareTo(c.getNumCar());
+		}else {
+			
+			return palo.compareTo(c.getPalo());
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
 	}
 }
 

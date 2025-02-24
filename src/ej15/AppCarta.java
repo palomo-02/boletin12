@@ -15,6 +15,7 @@ public class AppCarta {
 
 		}
 
+		
 		for (Carta C : lista) {
 			System.out.println(C);
 		}

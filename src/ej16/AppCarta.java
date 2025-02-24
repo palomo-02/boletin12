@@ -1,7 +1,6 @@
 package ej16;
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class AppCarta {
 	public static void main(String[] args) {
@@ -16,13 +15,20 @@ public class AppCarta {
 
 		}
 
-		for (Carta C : lista) {
+		
+
+		ArrayList<Carta>ListaOrdenada=new ArrayList<Carta>(lista);
+		
+Collections.sort(ListaOrdenada);		
+		
+		for (Carta C:ListaOrdenada) {
+			
 			System.out.println(C);
+			
+			
+			
 		}
 		
 		
-	
-		
-
 	}
 }
