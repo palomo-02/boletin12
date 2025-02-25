@@ -2,6 +2,12 @@ package Ej22;
 
 import java.util.*;
 
+
+/**
+ * @author Palomo
+ * @since 
+ * 
+ */
 public class AppTienda {
 	private static ArrayList<Tienda> lista = new ArrayList<Tienda>();
 
