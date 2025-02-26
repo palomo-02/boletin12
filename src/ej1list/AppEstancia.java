@@ -13,17 +13,11 @@ public class AppEstancia {
 
 		int opcion = 0;
 
-		
-		
-		
-		
-		alojamiento.add(New CasaRural());
-		
-		
-		
-		
-		
-		
+		alojamiento.add(new CasaRural("Casa Rural Ejemplo", 101, "Calle Ejemplo 1", 4, 100, 2));
+		alojamiento.add(new CasaRural("Casa Rural Ejemplo", 101, "Calle Ejemplo 1", 4, 100, 2));
+		alojamiento.add(new HotelRural("Casa Rural Ejemplo", 101, "Calle Ejemplo 1", 4, 100, 5));
+		alojamiento.add(new HotelRural("Casa Rural Ejemplo", 101, "Calle Ejemplo 1", 4, 100, 3));
+
 		do {
 
 			mostrarMenu();
@@ -36,20 +30,15 @@ public class AppEstancia {
 			case 2:
 				break;
 			case 3:
-				
-AñadirReserva(sc);				
-				
-				
-				
+
+				AñadirReserva(sc);
+
 				break;
 			case 4:
-				
-				
-				
-				
-				
+
 				break;
-			case 5: System.out.println("Saliendo... ");
+			case 5:
+				System.out.println("Saliendo... ");
 				break;
 			default:
 				System.out.println("Introduzca un numero entre el 1 y el 5, pruebe de nuevo ");
@@ -63,12 +52,10 @@ AñadirReserva(sc);
 	}
 
 	private static void AñadirReserva(Scanner sc) {
-		
+
 		System.out.println("añada el numero identificativo ");
 		int ID = sc.nextInt();
 		sc.nextLine();
-		
-		
 
 		System.out.println("Ingrese el DNI:");
 		int DNI = sc.nextInt();
@@ -80,18 +67,18 @@ AñadirReserva(sc);
 
 		System.out.println("Ingrese El numero de dias que se va a alojar:");
 		int dias = sc.nextInt();
-		sc.nextLine();		
-		
-		 Alojamiento alojamientoReservado = null;
-		    for (Alojamiento a : alojamiento) {
-		        if (a.getReferencia() == referencia) {
-		            alojamientoReservado = a;
-		            break;
-		        }
-		    }
-		
-        reserva.add(new Reserva(ID, DNI, alojamientoReservado, dias));
-		
+		sc.nextLine();
+
+		Alojamiento alojamientoReservado = null;
+		for (Alojamiento a : alojamiento) {
+			if (a.getReferencia() == referencia) {
+				alojamientoReservado = a;
+				break;
+			}
+		}
+
+		reserva.add(new Reserva(ID, DNI, alojamientoReservado, dias));
+
 	}
 
 	private static void mostrarMenu() {
