@@ -2,16 +2,15 @@ package Ej22;
 
 public class Tienda {
 
-	
 	private int Codigo;
-private String nombre;
-private int Stock;
+	private String nombre;
+	private int Stock;
 
 	public Tienda(int codigo, String nombre, int stock) {
-	Codigo = codigo;
-	this.nombre = nombre;
-	Stock = stock;
-}
+		Codigo = codigo;
+		this.nombre = nombre;
+		Stock = stock;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -41,12 +40,5 @@ private int Stock;
 	public String toString() {
 		return "Tienda [Codigo=" + Codigo + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
