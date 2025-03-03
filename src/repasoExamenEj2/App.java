@@ -31,7 +31,7 @@ public class App {
 				System.out.println("numero incorrecto, pruebe de nuevo");
 			}
 
-		} while (opcion != 6);
+		} while (opcion != 8);
 
 		sc.close();
 
@@ -40,11 +40,15 @@ public class App {
 	private static void MostrarMenu() {
 
 		System.out.println("1. Alta evento");
-		System.out.println("2. Baja eventon");
-		System.out.println("3. Modificación evento");
-		System.out.println("4. Listado alfabético de los eventos");
-		System.out.println("5. Listado por fecha de más reciente a más antiguo");
-		System.out.println("6. salir");
+		System.out.println("2. Alta participante");
+
+		System.out.println("3. Baja eventon");	
+		System.out.println("4. Alta participante");
+
+		System.out.println("5. Modificación evento");
+		System.out.println("6. Listado alfabético de los eventos");
+		System.out.println("7. Listado por fecha de más reciente a más antiguo");
+		System.out.println("8. salir");
 
 	}
 }
