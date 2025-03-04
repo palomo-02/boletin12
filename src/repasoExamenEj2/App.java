@@ -2,6 +2,8 @@ package repasoExamenEj2;
 
 import java.util.*;
 
+
+
 public class App {
 
 	private static ArrayList<Evento> evento = new ArrayList<>();
