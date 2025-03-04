@@ -31,12 +31,9 @@ public class App {
 				break;
 			case 5:
 				ListadoAlfabetico();
-
 				break;
 			case 6:
-
 				ListadoPorfecha();
-
 				break;
 			case 7:
 				AñadircharlaPonente(sc);
@@ -56,6 +53,10 @@ public class App {
 
 	private static void AñadircharlaPonente(Scanner sc) {
 
+		
+		
+		System.out.println("no sehacejeej");
+		return;
 	}
 
 	private static void ListadoPorfecha() {
