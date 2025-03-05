@@ -15,7 +15,7 @@ public class App {
 	/**
 	 * @param args
 	 * 
-	 * Metodo main por el que se llaman a los metodos 
+	 *             Metodo main por el que se llaman a los metodos
 	 */
 	public static void main(String[] args) {
 		var sc = new Scanner(System.in);
@@ -81,10 +81,10 @@ public class App {
 
 		}
 		evento.sort(new CompararPorFecha());
-for (Evento evento2 : evento) {
-	System.out.println(evento2);
+		for (Evento evento2 : evento) {
+			System.out.println(evento2);
 
-}
+		}
 	}
 
 	/**
@@ -97,9 +97,10 @@ for (Evento evento2 : evento) {
 			return;
 		}
 		Collections.sort(evento);
-for (Evento evento2 : evento) {
-	System.out.println(evento2);
-}	}
+		for (Evento evento2 : evento) {
+			System.out.println(evento2);
+		}
+	}
 
 	/**
 	 * Dar de alta a un participante en el evento a elegir
@@ -163,6 +164,7 @@ for (Evento evento2 : evento) {
 		}
 
 	}
+
 	/**
 	 * Modificar los elementos de un evento
 	 */
@@ -177,56 +179,58 @@ for (Evento evento2 : evento) {
 			System.out.println("Diga el nombre del evento que quiere modificar ");
 			String nombreModificar = sc.nextLine();
 
+			int opcionModificar = 0;
 			for (int i = 0; i < evento.size(); i++) {
 
 				if (evento.get(i).getNombre().equalsIgnoreCase(nombreModificar)) {
+					do {
+						System.out.println("elija que quiere modificar 1.nombre , 2.fecha, 3.aforo, 4.salir");
 
-					System.out.println("elija que quiere modificar 1.nombre , 2.fecha, 3.aforo");
+						opcionModificar = sc.nextInt();
+						sc.nextLine();
+						switch (opcionModificar) {
 
-					int eleccionModificar = sc.nextInt();
+						case 1:
 
-					switch (eleccionModificar) {
+							System.out.println("escriba el nuevo nombre: ");
+							String NuevoNombre = sc.nextLine();
 
-					case 1:
+							evento.get(i).setNombre(NuevoNombre);
+							;
 
-						System.out.println("escriba el nuevo nombre: ");
-						String NuevoNombre = sc.nextLine();
+							System.out.println("nombre cambiado con exito");
 
-						evento.get(i).setNombre(NuevoNombre);
-						;
+							break;
+						case 2:
 
-						System.out.println("nombre cambiado con exito");
+							System.out.println("escriba la nueva fecha ");
+							String NuevaFecha = sc.nextLine();
 
-						break;
-					case 2:
+							evento.get(i).setFecha(NuevaFecha);
+							;
+							System.out.println("fecha cambiado con exito");
 
-						System.out.println("escriba la nueva fecha ");
-						String NuevaFecha = sc.nextLine();
+							break;
+						case 3:
 
-						evento.get(i).setFecha(NuevaFecha);
-						;
-						System.out.println("fecha cambiado con exito");
+							System.out.println("escriba el nuevo aforo ");
+							int NuevoAforo = sc.nextInt();
+							evento.get(i).setAforo(NuevoAforo);
+							;
+							System.out.println("aforo cambiado con exito");
 
-						break;
-					case 3:
-
-						System.out.println("escriba el nuevo aforo ");
-						int NuevoAforo = sc.nextInt();
-						evento.get(i).setAforo(NuevoAforo);
-						;
-						System.out.println("aforo cambiado con exito");
-
-						break;
-					default:
-						System.out.println("inserte un numero correcto");
-
-					}
+							break;
+						default:
+							System.out.println("inserte un numero correcto");
+						}
+					} while (opcionModificar != 4);
 
 				}
-
 			}
+
 		}
 	}
+
 	/**
 	 * Eliminar un evento de la lista
 	 */
@@ -253,6 +257,7 @@ for (Evento evento2 : evento) {
 			}
 		}
 	}
+
 	/**
 	 * Crear un evento, con sus caracteristicas
 	 */
@@ -290,8 +295,9 @@ for (Evento evento2 : evento) {
 		}
 
 	}
+
 	/**
-	 * Muestra el menu 
+	 * Muestra el menu
 	 */
 	private static void MostrarMenu() {
 
