@@ -5,11 +5,12 @@ import java.util.*;
 public class App {
 
 	private static ArrayList<Libro> Libros = new ArrayList<>();
-private static Set<Usuario> usuarios=new HashSet<>();
+	private static Set<Usuario> usuarios = new HashSet<>();
+
 	/**
 	 * @param args
 	 * 
-	 *             Metodo main por el que se llaman a los metodos
+	 *Metodo main por el que se llaman a los metodos
 	 */
 	public static void main(String[] args) {
 		var sc = new Scanner(System.in);
@@ -23,23 +24,25 @@ private static Set<Usuario> usuarios=new HashSet<>();
 			switch (opcion) {
 			case 1:
 				agregarLibro(sc);
+				
 				break;
 			case 2:
 
 				borrarLibro(sc);
 
 				break;
-				
-				
+
 			case 3:
 				prestarLibro(sc);
 
 				break;
 			case 4:
 				ListarAlfabeticamente(sc);
+				
 				break;
 			case 5:
 				ListarPorFecha(sc);
+				
 				break;
 			case 6:
 				System.out.println("saliendo....");
@@ -55,31 +58,82 @@ private static Set<Usuario> usuarios=new HashSet<>();
 		sc.close();
 	}
 
-	
-		
-		
-	
-
 	private static void prestarLibro(Scanner sc) {
+		System.out.println("Inserte el DNI del usuario:");
+		String dniUsuario = sc.nextLine();
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		// Check if the user exists
+		Usuario usuarioEncontrado = null;
+		for (Usuario usuario : usuarios) {
+			if (usuario.getDni().equalsIgnoreCase(dniUsuario)) {
+				usuarioEncontrado = usuario;
+				break;
+			}
+		}
+
+		if (usuarioEncontrado == null) {
+			// User does not exist
+			System.out.println("El usuario que ha introducido no existe. ¿Quiere añadir uno nuevo? (1. Sí / 2. No)");
+			int opcionUsuario = sc.nextInt();
+			sc.nextLine(); // Consume the newline character
+
+			if (opcionUsuario == 1) {
+				// Add a new user
+				System.out.println("Inserte el nombre del nuevo usuario:");
+				String nombreUsuario = sc.nextLine();
+				System.out.println("Inserte el DNI del nuevo usuario:");
+				String nuevoDniUsuario = sc.nextLine();
+
+				Usuario nuevoUsuario = new Usuario(nombreUsuario, nuevoDniUsuario);
+				usuarios.add(nuevoUsuario);
+				System.out.println("Usuario añadido correctamente.");
+				usuarioEncontrado = nuevoUsuario; // Set the new user as the found user
+			} else {
+				System.out.println("Operación cancelada.");
+				return;
+			}
+		}
+
+		// At this point, usuarioEncontrado is either an existing user or a newly added
+		// user
+		// Proceed with lending the book
+		System.out.println("Inserte el título del libro que desea prestar:");
+		String tituloLibro = sc.nextLine();
+
+		// Find the book in the library
+		Libro libroEncontrado = null;
+		for (Libro libro : Libros) {
+			if (libro.getTitulo().equalsIgnoreCase(tituloLibro)) {
+				libroEncontrado = libro;
+				break;
+			}
+		}
+
+		if (libroEncontrado == null) {
+			System.out.println("El libro no existe en la biblioteca.");
+			return;
+		}
+
+		// Check if the book is a physical book (only physical books can be lent)
+		if (libroEncontrado instanceof LibroFisico) {
+			LibroFisico libroFisico = (LibroFisico) libroEncontrado;
+			if (libroFisico.Ejemplares > 0) {
+				// Lend the book
+				usuarioEncontrado.LibrosPrestados.add(libroFisico);
+				libroFisico.Ejemplares--; // Decrease the number of available copies
+				System.out.println("Libro prestado correctamente a " + usuarioEncontrado.getNombre());
+			} else {
+				System.out.println("No hay ejemplares disponibles de este libro.");
+			}
+		} else {
+			System.out.println("Solo se pueden prestar libros físicos.");
+		}
 	}
-
-
-
-
-
+	
+	
+	
+	
+	
 
 	private static void ListarPorFecha(Scanner sc) {
 

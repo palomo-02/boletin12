@@ -6,14 +6,14 @@ import java.util.*;
 public class Usuario {
 
 	String nombre;
-	int dni;
+	String dni;
 	String gmail;
 	
 	
 	
 	protected Set<LibroFisico> LibrosPrestados;
 
-	public Usuario(String nombre, int dni) {
+	public Usuario(String nombre, String dni) {
 		this.nombre = nombre;
 		this.dni = dni;
 		
@@ -43,7 +43,7 @@ public class Usuario {
 	/**
 	 * @return the dni
 	 */
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
@@ -51,7 +51,7 @@ public class Usuario {
 	/**
 	 * @param dni the dni to set
 	 */
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
