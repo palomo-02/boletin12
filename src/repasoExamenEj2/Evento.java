@@ -20,9 +20,16 @@ public class Evento implements Comparable <Evento> {
 
 
 
+
+
+	/**
+	 * @return the nombre
+	 */
 	public String getNombre() {
 		return nombre;
 	}
+
+
 
 
 

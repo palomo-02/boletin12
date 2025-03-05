@@ -2,12 +2,19 @@ package repasoExamenEj2;
 
 import java.util.*;
 
-
+/**
+ * @author usuarioDAM
+ * @since 03/25
+ * @version 1.0
+ */
 
 public class App {
 
 	private static ArrayList<Evento> evento = new ArrayList<>();
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		var sc = new Scanner(System.in);
 
@@ -55,37 +62,43 @@ public class App {
 
 	private static void AñadircharlaPonente(Scanner sc) {
 
-		
-		
 		System.out.println("no sehacejeej");
 		return;
 	}
 
+	/**
+	 * Lista por la fecha del evento
+	 */
+
 	private static void ListadoPorfecha() {
 
-		
 		if (evento.isEmpty()) {
-			
-			
+
 			System.out.println("no hay eventos programados");
 			return;
-			
+
 		}
-	     evento.sort(new CompararPorFecha());
-	        evento.forEach(System.out::println);
-		
-		
+		evento.sort(new CompararPorFecha());
+		evento.forEach(System.out::println);
+
 	}
+
+	/**
+	 * Lista por orden alfabetico del evento
+	 */
 
 	private static void ListadoAlfabetico() {
 		if (evento.isEmpty()) {
-            System.out.println("No hay eventos programados.");
-            return;
-        }
-        Collections.sort(evento);
-        evento.forEach(System.out::println);
-    }
+			System.out.println("No hay eventos programados.");
+			return;
+		}
+		Collections.sort(evento);
+		evento.forEach(System.out::println);
+	}
 
+	/**
+	 * Dar de alta a un participante en el evento a elegir
+	 */
 	private static void AltaParticipante(Scanner sc) {
 
 		if (evento.isEmpty()) {
@@ -145,7 +158,9 @@ public class App {
 		}
 
 	}
-
+	/**
+	 * Modificar los elementos de un evento
+	 */
 	private static void ModificarEvento(Scanner sc) {
 
 		if (evento.isEmpty()) {
@@ -207,7 +222,9 @@ public class App {
 			}
 		}
 	}
-
+	/**
+	 * Eliminar un evento de la lista
+	 */
 	private static void BajaEvento(Scanner sc) {
 
 		if (evento.isEmpty()) {
@@ -231,7 +248,9 @@ public class App {
 			}
 		}
 	}
-
+	/**
+	 * Crear un evento, con sus caracteristicas
+	 */
 	private static void AltaEvento(Scanner sc) {
 		System.out.println("Que nombre tiene el evento? ");
 		String nombreEvento = sc.nextLine();
@@ -266,7 +285,9 @@ public class App {
 		}
 
 	}
-
+	/**
+	 * Muestra el menu 
+	 */
 	private static void MostrarMenu() {
 
 		System.out.println("1. Alta evento");
