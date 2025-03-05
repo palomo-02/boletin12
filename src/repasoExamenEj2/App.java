@@ -14,6 +14,8 @@ public class App {
 
 	/**
 	 * @param args
+	 * 
+	 * Metodo main por el que se llaman a los metodos 
 	 */
 	public static void main(String[] args) {
 		var sc = new Scanner(System.in);
@@ -79,8 +81,10 @@ public class App {
 
 		}
 		evento.sort(new CompararPorFecha());
-		evento.forEach(System.out::println);
+for (Evento evento2 : evento) {
+	System.out.println(evento2);
 
+}
 	}
 
 	/**
@@ -93,8 +97,9 @@ public class App {
 			return;
 		}
 		Collections.sort(evento);
-		evento.forEach(System.out::println);
-	}
+for (Evento evento2 : evento) {
+	System.out.println(evento2);
+}	}
 
 	/**
 	 * Dar de alta a un participante en el evento a elegir
@@ -268,7 +273,7 @@ public class App {
 
 		case 1:
 
-			System.out.println("ha elejido dar de alta una conferencia, elija un tema");
+			System.out.println("ha elegido dar de alta una conferencia, elija un tema");
 			String tema = sc.nextLine();
 
 			evento.add((new Conferencia(nombreEvento, fechaEvento, aforo, tema)));
