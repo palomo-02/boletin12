@@ -1,12 +1,11 @@
 package repasoExamenEj4;
 
-public class Vehiculo {
+public class Vehiculo implements Comparable<Vehiculo> {
 
 	String marca;
 	String modelo;
 	int año;
-	
-	 String  matrícula;
+	String matrícula;
 
 	public Vehiculo(String marca, String modelo, int año, String matrícula) {
 		this.marca = marca;
@@ -75,8 +74,10 @@ public class Vehiculo {
 	public String toString() {
 		return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", año=" + año + ", matrícula=" + matrícula + "]";
 	}
-	
-	 
-	 
-	 
+
+	@Override
+	public int compareTo(Vehiculo o) {
+		return this.matrícula.compareToIgnoreCase(o.matrícula);
+	}
+
 }
